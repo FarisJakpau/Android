@@ -1,7 +1,20 @@
     private static void isArabic(String text) {
        Pattern p = Pattern.compile("\\p{InArabic}+(?:\\s+\\p{InArabic}+)*");
         Matcher m = p.matcher(text);
+        List<String> ayat = new ArrayList<String>();            // Buat arraylist untuk masukkan ayat dlm group
+        
     while(m.find()){
-    System.out.println(m.group());
-}
+         if(m.group().length() != 0){
+          ayat.add(m.group());
+         }
+    }
+    
+     for(int i =0 ; i<ayat.size();i++){
+      System.out.println(ayat.get(i));
+      System.out.println("gap");
+  }
+    
+    
+
+
     }
