@@ -33,13 +33,23 @@ public class ArabicParser {
                 }
             }
         }
+        String ayah = "";
+        ArrayList<String> listArabic = new ArrayList<String>();
         for(int i=0;i<arab.size();i++){
-            if(arab.get(i).equals(""))
-                System.out.println("");
-            else
-            System.out.print(arab.get(i)+" ");
+            if(arab.get(i).equals("")){
+                if(i!=0)
+                    listArabic.add(ayah);
+                ayah = "";
+//                System.out.println("");
+            }
+            else{
+//                System.out.print(arab.get(i)+" ");
+                ayah = ayah + " " + arab.get(i);
+            }
+            
         }
-//        System.out.println("Arabic text -> "+arab.toString());
+        
+        System.out.println("List Ayat : "+listArabic.toString());
             
     }
     
@@ -52,4 +62,6 @@ public class ArabicParser {
     }
     return false;
     }
+    
+    
 }
